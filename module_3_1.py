@@ -22,8 +22,8 @@ while choice2 == 'y':
     print('Результат операций со словом:', string_info(string))
     choice1 = input('Продолжить? (y/n) ', )
     if choice1 == 'y':
-        list_to_search = list(input("Введите список слов, разделяя пробелами: ", ).split(" "))
-        print('Проверка наличия слова в списке:', is_contains(string, list_to_search))
+        list_to_search = list(input("Введите список слов, разделяя пробелами: ", ).lower().split(" "))
+        print('Проверка наличия слова в списке:', is_contains(string.lower(), list_to_search))
         choice2 = input('Продолжить? (y/n) ', )
     else:
         break

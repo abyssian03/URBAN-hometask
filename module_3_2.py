@@ -1,6 +1,6 @@
 def send_email(message, recipient, sender = "university.help@gmail.com"):
     for x in [recipient, sender]:
-        if not x.endswith((".com", ".ru", ".net")):
+        if not ("@" in x and x.endswith((".com", ".ru", ".net"))):
             return f'Невозможно отправить письмо с адреса {sender} на адрес {recipient}'
     if recipient == sender:
         return "Нельзя отправить письмо самому себе!"

@@ -1,4 +1,6 @@
 def send_email(message, recipient, sender = "university.help@gmail.com"):
+    flag1 = False
+    flag2 = False
     for dom in [".com", ".ru", ".net"]:
         if recipient.endswith(dom):
             flag1 = True

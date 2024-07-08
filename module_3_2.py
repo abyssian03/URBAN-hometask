@@ -13,6 +13,6 @@ def send_email(message, recipient, sender = "university.help@gmail.com"):
     else:
         return f"НЕСТАНДАРТНЫЙ ОТПРАВИТЕЛЬ! Письмо отправлено с адреса {sender} на адрес {recipient}"
 
-print(send_email('Privet!', 'rare_avis@ukr.net', "cheef@@mail.ru"))
+print(send_email('Privet!', 'rare_avis@ukr.net', "cheef@mail.ru"))
 
 

@@ -21,9 +21,6 @@ class User:
         self.password = password
         self.age = age
 
-    def __str__(self):
-        return f"Ник {self.nickname}, хэш-пароль {self.password}, возраст {self.age}"
-
 class Video:
     def __init__(self, title, duration, adult_mode = False, time_now = 0):
         self.title = title

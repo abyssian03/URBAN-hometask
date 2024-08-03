@@ -47,8 +47,8 @@ class UrTube:
         return ('Логин или пароль введен неверно, вход не выполнен')
 
     def register(self, nickname, password, age):
-        for n in self.user_list():
-             if nickname == n:
+        for user in self.users:
+             if user.nickname == nickname:
                  print(f"Пользователь {nickname} уже существует")
                  break
         new_user = User(nickname, password, age)

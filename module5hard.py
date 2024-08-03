@@ -2,7 +2,7 @@ import time as tm
 import keyboard
 
 def play(title, limit, time):
-    print(f"Чтобы остановить воспроизведение <{title}>, нажмите esc")
+    print(f"Остановка воспроизведения <{title}> по долгому нажатию esc")
     while time < limit:
         if keyboard.is_pressed('esc'):
             print("Воспроизведение остановлено")

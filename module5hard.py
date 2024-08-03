@@ -91,12 +91,12 @@ class UrTube:
         for video in self.videos:
             if request == video.title:
                 if video.adult_mode == True:
-                    print (f"Видео по запросу <{request}> содержит контент для взрослых")
+                    print (f"Видео <{request}> содержит контент для взрослых")
                     if self.current_user.age < 18:
                         return ("Вам нет 18 лет, пожалуйста покиньте страницу")
                 video.time_now = play(video.title, video.duration, video.time_now)
-                return (f"Воспроизведение остановлено на {video.time_now} сек")
-        return (f"Видео по запросу <{request}> не найдено")
+                return (f"Воспроизведение остановлено на {video.time_now}-й сек.")
+        return (f"Видео <{request}> не найдено")
 
 ajumo = User("ajumo", hash("qwerty"), 41)
 baburo = User("baburo", hash("йцукен"), 28)

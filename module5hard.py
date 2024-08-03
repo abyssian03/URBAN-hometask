@@ -39,13 +39,6 @@ class UrTube:
         self.videos = videos
         self.current_user = None
 
-    def user_list(self):
-        return (list(user.nickname for user in self.users))
-
-    def video_list(self):
-        return (list(video.title for video in self.videos))
-
-
     def log_in(self, nickname, password):
         for user in self.users:
             if nickname == user.nickname and password == user.password:
@@ -77,9 +70,9 @@ class UrTube:
 
     def get_videos(self, request):
         result = []
-        for v in self.video_list():
-            if request in v:
-                result.append(v)
+        for video in self.videos:
+            if request.lower() in video.title.lower():
+                result.append(video.title)
         return (f"Видео по запросу <{request}>: {result}")
 
     def watch_video(self, request):
@@ -105,7 +98,7 @@ cringe_case = Video('Кринжовый случай с программисто
 array = [cringe_case]
 old_UrTube = UrTube([ajumo], [lesson1, lesson2, lesson3, cute_cats])
 print(old_UrTube.log_in("ajumo", hash("qwerty")))
-print(old_UrTube.get_videos("Python"))
+print(old_UrTube.get_videos("python"))
 print(old_UrTube.watch_video("Python guru"))
 print(old_UrTube.log_out())
 print(old_UrTube.log_in("petrushka", hash("12345")))

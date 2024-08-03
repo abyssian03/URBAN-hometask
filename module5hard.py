@@ -25,14 +25,11 @@ class User:
         return f"Ник {self.nickname}, хэш-пароль {self.password}, возраст {self.age}"
 
 class Video:
-    def __init__(self, title, duration):
+    def __init__(self, title, duration, adult_mode = False, time_now = 0):
         self.title = title
         self.duration = duration
-        self.time_now = 0
-        self.adult_mode = False
-
-    def ask_permission(self):
-        self.adult_mode = True
+        self.time_now = time_now
+        self.adult_mode = adult_mode
 
     def __len__(self):
         return self.duration
@@ -107,8 +104,7 @@ lesson1 = Video("Python Lesson 1", 300)
 lesson2 = Video("Python Lesson 2", 250)
 lesson3 = Video("Python Lesson 3", 350)
 cute_cats = Video("Милые котики", 25)
-cringe_case = Video('Кринжовый случай с программистом', 180)
-cringe_case.ask_permission()
+cringe_case = Video('Кринжовый случай с программистом', 180, True)
 array = [cringe_case]
 old_UrTube = UrTube([ajumo], [lesson1, lesson2, lesson3, cute_cats])
 print(old_UrTube.log_in("ajumo", hash("qwerty")))

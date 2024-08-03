@@ -5,7 +5,6 @@ def play(title, limit, time):
     print(f"Остановка воспроизведения <{title}> по долгому нажатию esc")
     while time < limit:
         if keyboard.is_pressed('esc'):
-            print("Воспроизведение остановлено")
             break
         else:
             print(time)
@@ -99,7 +98,7 @@ class UrTube:
                     if self.current_user.age < 18:
                         return ("Вам нет 18 лет, пожалуйста покиньте страницу")
                 video.time_now = play(video.title, video.duration, video.time_now)
-                return ("")
+                return (f"Воспроизведение остановлено на {video.time_now} сек")
         return (f"Видео по запросу <{request}> не найдено")
 
 ajumo = User("ajumo", hash("qwerty"), 41)

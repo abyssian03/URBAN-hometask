@@ -63,7 +63,7 @@ class Figure:
             print("Несовпадение параметров")
             return (False)
         for side in sides:
-            if not (isinstance(side, int) and side > 0):
+            if not side_condition(side):
                 print(f"Недопустимое значение: {side}")
                 return (False)
         return (True)

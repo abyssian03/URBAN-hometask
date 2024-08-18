@@ -8,7 +8,7 @@ def side_condition(num):
     return (False)
 
 def input_sides():
-    str = input("Введите новые данные длины: ")
+    str = input("Введите новые данные длины (через пробел): ")
     sides = [int(substr) for substr in str.split()]
     return (sides)
 

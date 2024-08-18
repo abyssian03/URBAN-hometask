@@ -86,10 +86,10 @@ class Circle(Figure):
         Figure.__init__(self, 1, *args)
 
     def radius(self):
-        return (len(self) / (2*pi))
+        print("Радиус окружности:", len(self) / (2*pi))
 
     def get_square(self):
-        return (pi * (self.radius() ** 2))
+        print ("Площадь круга:", (self.get_sides()[0] ** 2) / (pi * 4))
 
 class Triangle(Figure):
     def __init__(self, *args):
@@ -100,8 +100,11 @@ class Triangle(Figure):
         s = p
         for side in self.get_sides():
             s = s * (p - side)
-        s = sqrt(s)
-        return (s)
+        if s > 0:
+            s = sqrt(s)
+            print (f"Площадь треугольника: {s}")
+        else:
+            print ("Введенные длины сторон не образуют замкнутую фигуру, площадь не может быть вычислена")
 
 class Cube(Figure):
     def __init__(self, side, *args):
@@ -109,20 +112,20 @@ class Cube(Figure):
         Figure.__init__(self, 12, side_list, *args)
 
     def get_volume(self):
-        return (self.get_sides()[0] ** 3)
+        print("Объем куба:", self.get_sides()[0] ** 3)
 
 circle = Circle([5], (50, 50, 50), 0)
-print("Радиус окружности:", circle.radius())
+circle.radius()
 print("Цвет окружности RGB:", *circle.get_color())
 circle.set_color(*input_color())
 circle.set_sides(input_sides())
-print("Площадь круга:", circle.get_square())
+circle.get_square()
 triangle = Triangle([3, 4, 5], (4, 5, 6), 10)
 print("Длины сторон треугольника:", *triangle.get_sides())
 print ("Заполненность треугольника:", triangle.filled)
 triangle.set_sides(input_sides())
-print("Площадь треугольника:", triangle.get_square())
+triangle.get_square()
 cube = Cube([-3], (33, 33, 33), 1)
 print("Сумма ребер куба:", len(cube))
 print("Цвет куба RGB:", *cube.get_color())
-print("Объем куба:", cube.get_volume())
+cube.get_volume()

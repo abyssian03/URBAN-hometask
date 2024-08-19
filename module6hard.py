@@ -53,7 +53,7 @@ class Figure:
 
     def set_color(self, r, g, b):
         if self.__is_valid_color(r, g, b):
-            print(f"Цвет изменен")
+            print("Цвет изменен")
             self.__color = (r, g, b)
         else:
             print("Изменения не внесены")

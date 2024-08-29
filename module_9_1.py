@@ -27,10 +27,10 @@ def get_monodigital(int_list):
     for num in int_list:
         flag = True
         i = 1
-        while int(num / (10 ** i)) != 0:
+        while num // (10 ** i) != 0:
             flag = False
             n1 = num % (10 ** i)
-            n2 = int((num % (10 ** (i+1))) / 10)
+            n2 = (num % (10 ** (i+1))) // 10
             if n1 == n2:
                 flag = True
             i += 1

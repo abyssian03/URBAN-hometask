@@ -19,10 +19,7 @@ def get_prime(int_list):
     return (result)
 
 def get_square(int_list):
-    result = []
-    for num in int_list:
-        if sqrt(num) % 1 == 0:
-            result.append(num)
+    result = [num for num in int_list if sqrt(num) % 1 == 0]
     return (result)
 
 def get_monodigital(int_list):

@@ -2,7 +2,7 @@ import threading
 import random
 import time
 
-class Bank():
+class Bank:
     def __init__(self, balance, lock):
         self.balance = balance
         self.lock = lock

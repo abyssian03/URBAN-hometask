@@ -11,7 +11,7 @@ def introspection_info(obj):
             continue
         if attribute == '__dict__':
             dictionary.update(getattr(obj, attribute))
-            print('dict:', *dictionary.items())
+            print('dict items (attribute, key):', *dictionary.items())
             continue
         s = str(type(getattr(obj, attribute)))
         if s == "<class 'method'>":
@@ -30,8 +30,8 @@ def introspection_info(obj):
     print("undefined:", *undef)
     for key in dictionary:
         del others[key]
-    others_attributes = others.items()
-    print("other attributes:", *others_attributes)
+    other_attributes = others.items()
+    print("other attributes:", *other_attributes)
 
 class House:
     def __init__(self, name, floors):

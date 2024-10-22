@@ -1,5 +1,4 @@
 def introspection_info(obj):
-    print("type:", type(obj))
     methods = []
     method_wrappers = []
     builtin_functions_or_methods = []
@@ -7,9 +6,11 @@ def introspection_info(obj):
     dictionary = {}
     others = {}
     for attribute in dir(obj):
-        if attribute == '__class__' or attribute == '__init__':
+        if attribute == '__class__':
+            print("class:", getattr(obj, attribute))
+        elif attribute == '__init__':
             continue
-        if attribute == '__dict__':
+        elif attribute == '__dict__':
             dictionary.update(getattr(obj, attribute))
             print('dict items (attribute, key):', *dictionary.items())
             continue

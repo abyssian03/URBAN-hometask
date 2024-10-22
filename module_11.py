@@ -7,7 +7,8 @@ def introspection_info(obj):
     others = {}
     for attribute in dir(obj):
         if attribute == '__class__':
-            print("class:", getattr(obj, attribute))
+            print("type of object:", getattr(obj, attribute))
+            print("basic types:", *getattr(obj, attribute).__bases__)
             continue
         elif attribute == '__init__':
             continue

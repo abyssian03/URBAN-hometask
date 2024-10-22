@@ -7,8 +7,8 @@ def introspection_info(obj):
     others = {}
     for attribute in dir(obj):
         if attribute == '__class__':
-            print("type of object:", getattr(obj, attribute))
-            print("basic types:", *getattr(obj, attribute).__bases__)
+            print("class of object:", getattr(obj, attribute))
+            print("basic classes:", *getattr(obj, attribute).__bases__)
             continue
         elif attribute == '__init__':
             continue
@@ -32,7 +32,8 @@ def introspection_info(obj):
     print("builtin functions or methods:", *builtin_functions_or_methods)
     print("undefined:", *undef)
     for key in dictionary:
-        del others[key]
+        if key in others:
+            del others[key]
     print("other attributes:", *others.items())
 
 class House:

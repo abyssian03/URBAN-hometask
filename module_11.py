@@ -11,7 +11,7 @@ def introspection_info(obj):
             continue
         if attribute == '__dict__':
             dictionary.update(getattr(obj, attribute))
-            print('dict:', dictionary)
+            print('dict:', *dictionary.items())
             continue
         s = str(type(getattr(obj, attribute)))
         if s == "<class 'method'>":

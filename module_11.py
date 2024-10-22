@@ -8,6 +8,7 @@ def introspection_info(obj):
     for attribute in dir(obj):
         if attribute == '__class__':
             print("class:", getattr(obj, attribute))
+            continue
         elif attribute == '__init__':
             continue
         elif attribute == '__dict__':

@@ -31,8 +31,7 @@ def introspection_info(obj):
     print("undefined:", *undef)
     for key in dictionary:
         del others[key]
-    other_attributes = others.items()
-    print("other attributes:", *other_attributes)
+    print("other attributes:", *others.items())
 
 class House:
     def __init__(self, name, floors):

@@ -8,7 +8,7 @@ dp = Dispatcher(bot, storage=MemoryStorage())
 
 @dp.message_handler(commands = ['start'])
 async def start_message(message):
-    await message.answer('Привет! Я бот, помогающий вашему здоровью.')
+    print('Привет! Я бот, помогающий вашему здоровью.')
 
 @dp.message_handler()
 async def all_message(message):
